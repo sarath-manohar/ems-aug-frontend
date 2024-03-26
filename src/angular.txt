@@ -1,0 +1,66 @@
+
+
+Basic Concepts
+-----------------
+
+1. Module :root module - Appmodule used to hold components
+2. components: parts of UI ,combination of ts  file,html file,css & root component -AppComponent
+3. setup path for components = use routing module as an object in th array  route []
+    in array specify of path of each componet using as an object
+    - use router-outlet selector in root component - used to switch component template according to the user request path
+
+    Data Binding
+---------------------
+data sharing within a component
+-One Way Data Binding
+   - ts (component)to html(view)
+   -  string interpolation : use {{component property}}
+   - property binding : [attribute] ="class property"
+
+   -html(view) to ts (component)
+  
+  -event binding :(event name)= "function call"
+  - event binding using $event:(event-name)=function-call($event)
+  - event binding using template reference variable
+
+-Two way data binding
+
+ts - html 
+html - ts
+
+-we use ngModel directives to done two way binding
+-basically directives are used in html template url 
+-ng model is used to handle input related programmes 
+-ngForm is used to handle form
+
+to use ngModel 
+first import FormsModule app module.ts
+then use [(ngModel)]= "class property"
+
+-structural directives: used add and remove elements from a angular app
+  - *ngIf = "condition"
+  -*ngFor or ="let variable-name of array-name"
+
+
+  Dependency Injection : when two classes are dependednt then one can class can access others properties
+   and function 
+   -syntax - access-specifier  variable-name:dependent-class-name
+
+
+
+
+angular forms 
+----------------
+
+1- template driven form
+2- model driven form
+
+API CALLS IN angular
+-------------------------------
+
+Handling Asynchronus Function - Rxjs Library
+    observable :
+        -subscribe (callback/observer)=resolve state
+
+    API CALL - use http methods in httpClient class  
+    - import httpClientModule to module file    

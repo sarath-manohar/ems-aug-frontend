@@ -1,0 +1,52 @@
+<div class="conatiner-fluid">
+  <div class="row">
+    <div *ngIf="sideBarStatus"
+      style="height: 90vh; width: fit-content"
+      class="side-bar col-lg-2 bg-dark d-flex flex-column p-3"
+    >
+      <a
+        style="text-decoration: none; color: beige"
+        class="fw-bolder p-2"
+        routerLink=""
+        >HOME</a
+      >
+      <a
+        style="text-decoration: none; color: beige"
+        class="fw-bolder p-2"
+        routerLink="/users"
+        >USERS</a
+      >
+      <button (click)="logOut()" class="btn mt-auto text-light fw-bolder">Logout</button>
+    </div>
+    <div class="col-lg-10">
+        <div class="row pt-2 w-100">
+            <div class="col-lg-8">
+        <div style="height: 100px;background-image: url('https://th.bing.com/th/id/R.c6e91c4c8d9d244ee2a1f75e2a28f013?rik=UOTLAh370zj23g&riu=http%3a%2f%2fevansdata.com%2fedc-content%2fbanners%2f2016%2f09%2fbackground-blue.jpg&ehk=W8OUCm7k5ztmkOFk%2br7ZHQbk0jjkIwZX6mLgJxUA8jU%3d&risl=&pid=ImgRaw&r=0');"
+        class="banner rounded p-3 d-flex align-items-center shadow" >
+            <h1 class="fw-bolder text-danger"><i (click)="menuBtnClicked()" style="cursor: pointer;" class=" fa-solid fa-bars"></i> Welcome {{adminName}}</h1>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-6">
+                <!-- calendar -->
+                <app-calendar></app-calendar>
+            </div>
+            <div class="col-lg-6">
+                <!-- chart -->
+                <app-chart></app-chart>
+            </div>
+        </div>
+            </div>
+            <div class="col-lg-4">
+                <div style="height: 400px  ;"class='border rounded p-2 shadow  edit-admin'>
+                  <!-- child -->
+                    <app-update-admin (onAdminChange)="onAdminChange($event)"></app-update-admin>
+                </div>
+                <div style="height: 150px;background-image: url('https://th.bing.com/th/id/OIP.ZycNkMG5iVK5Cpx4-3cPPAHaFj?w=626&h=470&rs=1&pid=ImgDetMain');" class="rounded p-3 d-flex align-items-center">
+                    <h1 class="text-secondary"><i class="fa-solid fa-users"></i>Employe:{{userCount}}</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
